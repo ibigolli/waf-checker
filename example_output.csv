@@ -1,0 +1,6 @@
+URL,WAF_Detectado,Tipo_WAF,Indicadores,Status_HTTP,Tempo_Resposta,Erro
+https://example.com,Não,N/A,N/A,200,0.234s,N/A
+https://cloudflare.com,Sim,cloudflare,"HTTP_HEADER_cloudflare; HTTP_COOKIE_cloudflare",200,0.156s,N/A
+https://akamai.com,Sim,akamai,"HTTP_HEADER_akamai; DNS_CNAME_akamai",200,0.189s,N/A
+https://imperva.com,Sim,imperva,"HTTP_COOKIE_imperva; HTTP_BODY_imperva",200,0.267s,N/A
+https://httpbin.org,Não,N/A,N/A,200,0.123s,N/A

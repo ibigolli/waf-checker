@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  waf-checker:
+    build: .
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION:-us-east-1}
+      - S3_BUCKET=${S3_BUCKET}
+      - LOCAL_MODE=false
+    volumes:
+      - ./output:/app/output
+      - ./input:/app/input
+    command: ["--help"]

@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "timestamp": 1703123456,
+    "total_urls": 5,
+    "waf_detected_count": 3,
+    "waf_not_detected_count": 2
+  },
+  "results": [
+    {
+      "url": "https://example.com",
+      "waf_detected": false,
+      "waf_type": null,
+      "waf_indicators": [],
+      "status_code": 200,
+      "response_time": 0.234,
+      "error": null
+    },
+    {
+      "url": "https://cloudflare.com",
+      "waf_detected": true,
+      "waf_type": "cloudflare",
+      "waf_indicators": [
+        "HTTP_HEADER_cloudflare",
+        "HTTP_COOKIE_cloudflare"
+      ],
+      "status_code": 200,
+      "response_time": 0.156,
+      "error": null
+    },
+    {
+      "url": "https://akamai.com",
+      "waf_detected": true,
+      "waf_type": "akamai",
+      "waf_indicators": [
+        "HTTP_HEADER_akamai",
+        "DNS_CNAME_akamai"
+      ],
+      "status_code": 200,
+      "response_time": 0.189,
+      "error": null
+    },
+    {
+      "url": "https://imperva.com",
+      "waf_detected": true,
+      "waf_type": "imperva",
+      "waf_indicators": [
+        "HTTP_COOKIE_imperva",
+        "HTTP_BODY_imperva"
+      ],
+      "status_code": 200,
+      "response_time": 0.267,
+      "error": null
+    },
+    {
+      "url": "https://httpbin.org",
+      "waf_detected": false,
+      "waf_type": null,
+      "waf_indicators": [],
+      "status_code": 200,
+      "response_time": 0.123,
+      "error": null
+    }
+  ]
+}

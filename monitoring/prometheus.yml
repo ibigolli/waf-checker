@@ -1,0 +1,31 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+scrape_configs:
+  # Prometheus itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # WAF Checker service
+  - job_name: 'waf-checker'
+    static_configs:
+      - targets: ['waf-checker:8000']
+    scrape_interval: 30s
+    metrics_path: /metrics
+
+  # Node Exporter (if you want system metrics)
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['node-exporter:9100']
+
+  # Docker metrics
+  - job_name: 'docker'
+    static_configs:
+      - targets: ['docker.for.mac.localhost:9323']
+    metrics_path: /metrics

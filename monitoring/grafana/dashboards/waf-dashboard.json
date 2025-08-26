@@ -1,0 +1,134 @@
+{
+    "dashboard": {
+        "id": null,
+        "title": "WAF Checker Dashboard",
+        "tags": [
+            "waf",
+            "security",
+            "monitoring"
+        ],
+        "style": "dark",
+        "timezone": "browser",
+        "panels": [
+            {
+                "id": 1,
+                "title": "Total URLs Verificadas",
+                "type": "stat",
+                "targets": [
+                    {
+                        "expr": "waf_urls_total",
+                        "legendFormat": "Total URLs"
+                    }
+                ],
+                "fieldConfig": {
+                    "defaults": {
+                        "color": {
+                            "mode": "palette-classic"
+                        },
+                        "custom": {
+                            "displayMode": "basic"
+                        }
+                    }
+                },
+                "gridPos": {
+                    "h": 8,
+                    "w": 6,
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            {
+                "id": 2,
+                "title": "WAFs Detectados",
+                "type": "stat",
+                "targets": [
+                    {
+                        "expr": "waf_detected_total",
+                        "legendFormat": "WAF Detectado"
+                    }
+                ],
+                "fieldConfig": {
+                    "defaults": {
+                        "color": {
+                            "mode": "thresholds"
+                        },
+                        "thresholds": {
+                            "steps": [
+                                {
+                                    "color": "green",
+                                    "value": null
+                                },
+                                {
+                                    "color": "red",
+                                    "value": 80
+                                }
+                            ]
+                        }
+                    }
+                },
+                "gridPos": {
+                    "h": 8,
+                    "w": 6,
+                    "x": 6,
+                    "y": 0
+                }
+            },
+            {
+                "id": 3,
+                "title": "Tipos de WAF Detectados",
+                "type": "piechart",
+                "targets": [
+                    {
+                        "expr": "waf_type_count",
+                        "legendFormat": "{{type}}"
+                    }
+                ],
+                "gridPos": {
+                    "h": 8,
+                    "w": 12,
+                    "x": 12,
+                    "y": 0
+                }
+            },
+            {
+                "id": 4,
+                "title": "Tempo de Resposta",
+                "type": "timeseries",
+                "targets": [
+                    {
+                        "expr": "waf_response_time_seconds",
+                        "legendFormat": "{{url}}"
+                    }
+                ],
+                "gridPos": {
+                    "h": 8,
+                    "w": 24,
+                    "x": 0,
+                    "y": 8
+                }
+            },
+            {
+                "id": 5,
+                "title": "Status HTTP",
+                "type": "timeseries",
+                "targets": [
+                    {
+                        "expr": "waf_http_status_codes",
+                        "legendFormat": "{{status_code}}"
+                    }
+                ],
+                "gridPos": {
+                    "h": 8,
+                    "w": 24,
+                    "x": 0,
+                    "y": 16
+                }
+            }
+        ],
+        "time": {
+            "from": "now-1h",
+            "to": "now"
+        },
+        "refresh": "30s"
+    }
+}

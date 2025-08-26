@@ -1,0 +1,14 @@
+# Arquivo de exemplo com URLs para teste
+# Uma URL por linha, comentários começam com #
+# URLs sem protocolo serão automaticamente convertidas para https://
+
+example.com
+google.com
+github.com
+stackoverflow.com
+reddit.com
+wikipedia.org
+amazon.com
+microsoft.com
+apple.com
+netflix.com
